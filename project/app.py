@@ -114,6 +114,7 @@ def delete_entry(post_id):
 
 @app.route("/search/", methods=["GET"])
 def search():
+    flash("Search")
     query = request.args.get("query")
     entries = db.session.query(models.Post)
     if query:
